@@ -122,13 +122,15 @@ class PSI(Resource):
             raise CheckError(f"Error reading PSI file {self.file_path}: {e}")
 
 
-def parse_tuple(value):
+def parse_tuple(value) -> tuple[float, float]:
+    """Parse two float values separated by a colon"""
+
     try:
         # Split the input string on ":" and convert each part to a float value
         parts = value.split(":")
         if len(parts) != 2:
             raise ValueError("Input must contain exactly two numbers separated by ':'")
-        if not 0 <= parts[0] <= parts[1] <= 100:
+        if not 0 <= float(parts[0]) <= float(parts[1]) <= 100:
             raise ValueError(
                 "Thresholds need to be in percentages and warn should not exceed critical."
             )
