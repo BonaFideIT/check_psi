@@ -1,5 +1,13 @@
 # check_psi
+
 A nagios plugin for checking pressure stall information values provided by the kernel for cpu, io and memory
+
+Tested for 
+
+* python 3.9.2
+* python 3.11.2
+
+# usage
 
 ```
 usage: check_psi.py [-h] {cpu,io,memory} ...
