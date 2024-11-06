@@ -36,3 +36,11 @@ options:
   --some-avg300 WARN:CRIT
                         Override thresholds for warning and critical for avg300 time window for "some" values
 ```
+
+# installation
+
+1. clone repository to /usr/local/bin/
+2. create virtualenv
+3. install pipenv via pip
+4. pipenv sync
+5. test
