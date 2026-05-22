@@ -21,59 +21,56 @@ class KindEnum(Enum):
     Full = "full"
     Some = "some"
 
+    @property
+    def default_cpu(self):
+        """default CPU thresholds"""
 
-@property
-def default_cpu(self):
-    """default CPU thresholds"""
+        return {
+            KindEnum.Full: {
+                "avg10": (5, 10),
+                "avg60": (3, 6),
+                "avg300": (2, 4),
+            },
+            KindEnum.Some: {
+                "avg10": (10, 20),
+                "avg60": (7, 15),
+                "avg300": (5, 10),
+            },
+        }[self]
 
-    return {
-        KindEnum.Full: {
-            "avg10": (5, 10),
-            "avg60": (3, 6),
-            "avg300": (2, 4),
-        },
-        KindEnum.Some: {
-            "avg10": (10, 20),
-            "avg60": (7, 15),
-            "avg300": (5, 10),
-        },
-    }[self]
+    @property
+    def default_io(self):
+        """default IO thresholds"""
 
+        return {
+            KindEnum.Full: {
+                "avg10": (10, 20),
+                "avg60": (5, 10),
+                "avg300": (3, 7),
+            },
+            KindEnum.Some: {
+                "avg10": (20, 40),
+                "avg60": (15, 30),
+                "avg300": (10, 20),
+            },
+        }[self]
 
-@property
-def default_io(self):
-    """default IO thresholds"""
+    @property
+    def default_memory(self):
+        """default memory pressure thresholds"""
 
-    return {
-        KindEnum.Full: {
-            "avg10": (10, 20),
-            "avg60": (5, 10),
-            "avg300": (3, 7),
-        },
-        KindEnum.Some: {
-            "avg10": (20, 40),
-            "avg60": (15, 30),
-            "avg300": (10, 20),
-        },
-    }[self]
-
-
-@property
-def default_memory(self):
-    """default memory pressure thresholds"""
-
-    return {
-        KindEnum.Full: {
-            "avg10": (5, 10),
-            "avg60": (3, 6),
-            "avg300": (2, 4),
-        },
-        KindEnum.Some: {
-            "avg10": (10, 20),
-            "avg60": (7, 15),
-            "avg300": (5, 10),
-        },
-    }[self]
+        return {
+            KindEnum.Full: {
+                "avg10": (5, 10),
+                "avg60": (3, 6),
+                "avg300": (2, 4),
+            },
+            KindEnum.Some: {
+                "avg10": (10, 20),
+                "avg60": (7, 15),
+                "avg300": (5, 10),
+            },
+        }[self]
 
 
 class PSI(Resource):
