@@ -80,13 +80,15 @@ class PSI(Resource):
         """Set the source of SPI information"""
 
         self.resource = resource
+        self.file_path = f"/proc/pressure/{self.resource}"
 
     def probe(self):
         """Read all values from proc and create metrics"""
+        if self.resource is None:
+            raise CheckError("No resource specified, please use one of the subcommands cpu, io or mem")
 
-        fn = f"/proc/pressure/{self.resource}"
         try:
-            with open(fn) as fd:
+            with open(self.file_path) as fd:
                 for line in fd:
                     # check line syntax
                     match = re.match(
@@ -95,7 +97,7 @@ class PSI(Resource):
                     )
                     if not match:
                         raise CheckError(
-                            f"File {fn} contains unexpected syntax line: {line} "
+                            f"File {self.file_path} contains unexpected syntax line: {line} "
                         )
 
                     # unpack values
