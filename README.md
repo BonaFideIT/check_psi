@@ -1,5 +1,13 @@
 # check_psi
+
 A nagios plugin for checking pressure stall information values provided by the kernel for cpu, io and memory
+
+Tested for 
+
+* python 3.9.2
+* python 3.11.2
+
+# usage
 
 ```
 usage: check_psi.py [-h] {cpu,io,memory} ...
@@ -36,3 +44,11 @@ options:
   --some-avg300 WARN:CRIT
                         Override thresholds for warning and critical for avg300 time window for "some" values
 ```
+
+# installation
+
+1. clone repository to /usr/local/bin/
+2. create virtualenv
+3. install pipenv via pip
+4. pipenv sync
+5. test
