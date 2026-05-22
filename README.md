@@ -1,4 +1,5 @@
 # check_psi
+[![Tests](https://github.com/bonafideit/check_psi/actions/workflows/tests.yml/badge.svg)](https://github.com/bonafideit/check_psi/actions/workflows/tests.yml)
 
 A nagios plugin for checking pressure stall information values provided by the kernel for cpu, io and memory
 
