@@ -47,7 +47,13 @@ options:
                         Override thresholds for warning and critical for avg300 time window for "some" values
 ```
 
-# installation
+# installation from package
+
+1. optionally create virtualenv
+2. install pypi package
+3. test 
+
+# alternative manual installation
 
 1. clone repository to /usr/local/bin/
 2. create virtualenv
