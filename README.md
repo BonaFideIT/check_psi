@@ -6,6 +6,7 @@ Tested for
 
 * python 3.9.2
 * python 3.11.2
+* python 3.13.5
 
 # usage
 
