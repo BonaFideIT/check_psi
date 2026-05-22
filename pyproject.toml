@@ -1,6 +1,6 @@
 [project]
 name = "check-psi"
-version = "1.1.0"
+version = "1.1.1"
 description = "A nagios plugin for checking pressure stall information values provided by the kernel for cpu, io and memory"
 readme = "README.md"
 authors = [
