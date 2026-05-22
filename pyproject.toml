@@ -13,7 +13,7 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
 ]
-keywords = ["icinga", "nagios", "plugin", "check_command", "debian", "release", "version"]
+keywords = ["icinga", "nagios", "plugin", "check_command", "debian", "psi", "pressure stall information", "linux"]
 requires-python = ">=3.9"
 dependencies = [
     "nagiosplugin>=1.4.0",
@@ -29,4 +29,4 @@ dev = [
 Homepage = "https://github.com/BonaFideIT/check_psi"
 
 [project.scripts]
-check_psi = "check_psi.check_psi:main"
+check_psi = "check_psi.cli:main"
