@@ -84,8 +84,9 @@ class PSI(Resource):
 
     def probe(self):
         """Read all values from proc and create metrics"""
+
         if self.resource is None:
-            raise CheckError("No resource specified, please use one of the subcommands cpu, io or mem")
+            raise CheckError("No resource specified.")
 
         try:
             with open(self.file_path) as fd:
