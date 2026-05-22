@@ -147,7 +147,7 @@ def parse_args():
     fields = ("avg10", "avg60", "avg300")
 
     # generate one sub-parser per resource kind for choosing the correct defaults
-    subparsers = parser.add_subparsers(dest="resource")
+    subparsers = parser.add_subparsers(dest="resource", required=True)
     for resource in resource_choices:
         # adds subcommands per-resource
         subparser = subparsers.add_parser(
